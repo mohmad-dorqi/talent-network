@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slidein {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideout {
+  from {
+    transform: scale(2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+* {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  opacity: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+input,
+textarea,
+select {
+  @apply focus:outline-none focus-visible:outline-none focus:placeholder:text-transparent;
+}
+
+.teams-slider .swiper-slide {
+  width: 184px;
+}
+
+@media screen and (min-width: 768px) {
+  .teams-slider .swiper-slide {
+    width: 224px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .teams-slider .swiper-slide {
+    min-width: 292px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .teams-slider .swiper-slide {
+    width: 21% !important;
+    min-width: 292px;
+  }
+}
+
+.teams-slider .swiper-button-disabled {
+  opacity: 0.3 !important;
+}
+
+/* slider workes samples */
+.work-samples .swiper-slide {
+  width: 100%;
+
+  transition: 0.8s all;
+
+  align-items: center;
+  display: flex;
+}
+
+@media screen and (min-width: 1024px) {
+  .work-samples .swiper-wrapper {
+    align-items: center;
+  }
+
+  .work-samples .swiper-slide {
+    width: 25% !important;
+
+    animation-name: slideout;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+  }
+  .work-samples .swiper-slide {
+    width: 25%;
+  }
+
+  .work-samples .swiper-slide:nth-last-child() {
+    width: 100%;
+  }
+
+  .work-samples .swiper-slide-active {
+    width: 50% !important;
+    animation-name: slidein;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+  }
+  .work-samples .swiper-slide-active {
+    width: 50%;
+  }
+}
